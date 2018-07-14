@@ -12,7 +12,7 @@ const profile = () => {
   }, 100);
 
   return `
-    <article class="Profile Content-section u-show">
+    <article class="Profile Content-section u-hide">
       <h2>Profile</h2>
     </article>
   `;

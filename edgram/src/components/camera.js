@@ -12,7 +12,7 @@ const camera = () => {
   }, 100);
 
   return `
-    <article class="Camera Content-section u-show">
+    <article class="Camera Content-section u-hide">
       <h2>Camera</h2>
     </article>
   `;

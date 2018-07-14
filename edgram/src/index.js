@@ -15,5 +15,5 @@ const page = `
 
 document.getElementById('root').innerHTML = page;
 
-// https://www.youtube.com/watch?v=RwVInG6l6lk&list=PLtTGWoGMH2rN87GqdRbAwMShYShGP-46i&index=42
-// current class -> https://github.com/jonmircha/edhtml5-pwa2017/tree/master/edgram
+// https://www.youtube.com/watch?v=2J2a_-tDOKE&index=44&list=PLtTGWoGMH2rN87GqdRbAwMShYShGP-46i
+// current class -> https://github.com/jonmircha/edhtml5-pwa2017/tree/d8d4ce4787119728cddfbc70d2fdc64dfaeaefe8

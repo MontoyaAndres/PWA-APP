@@ -12,7 +12,7 @@ const uploader = () => {
   }, 100);
 
   return `
-    <article class="Uploader Content-section u-show">
+    <article class="Uploader Content-section u-hide">
       <h2>Uploader</h2>
     </article>
   `;
