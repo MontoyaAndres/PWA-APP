@@ -12,7 +12,7 @@ const timeline = () => {
   }, 100);
 
   return `
-    <article class="Timeline Content-section u-show">
+    <article class="Timeline Content-section u-hide">
       <h2>timeline</h2>
     </article>
   `;
