@@ -1,5 +1,7 @@
 import firebase from 'firebase';
+
 import { signOut } from './auth';
+import { clearProgress } from './upload_progress';
 
 const footer = () => {
   const d = document;
@@ -28,6 +30,8 @@ const footer = () => {
               section.classList.remove('u-show', 'u-fadein')
             }
           });
+
+          clearProgress();
         }
       });
     }

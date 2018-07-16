@@ -1,6 +1,7 @@
 import firebase from 'firebase';
-import { progressBar } from './upload_progress';
+import { progressBar, progressStatus, showProgress, hideProgress } from './upload_progress';
 import { errorMsg, successMsg } from './helpers/messages';
+import { savePḧotoInDB } from './helpers/photos_db';
 
 const uploader = () => {
   const d = document;
@@ -20,9 +21,28 @@ const uploader = () => {
       uploader.addEventListener('change', e => {
         Array.from(e.target.files).forEach(file => {
           if (file.type.match('image.*')) {
-            output.innerHTML = successMsg('awesome');
+            const uploadTask = storageRef.child(file.name).put(file);
+
+            uploadTask.on('state_changed', data => {
+              showProgress();
+              progressStatus(data);
+            }, err => {
+              c(err, err.code, err.message);
+              output.innerHTML = errorMsg(`${err.message}`, err);
+            }, () => {
+              storageRef.child(file.name).getDownloadURL()
+                .then(url => {
+                  output.insertAdjacentHTML(
+                    'afterbegin',
+                    `${successMsg('Tu foto se ha subido')}<img src="${url}">`
+                  )
+                  savePḧotoInDB(url, user);
+                  hideProgress();
+                })
+                .catch(err => output.innerHTML = errorMsg(`${err.mesagge}`, err))
+            });
           } else {
-            output.innerHTML = errorMsg('debe ser imagen');
+            output.innerHTML = errorMsg('debe ser imagen', null);
           }
         });
 
