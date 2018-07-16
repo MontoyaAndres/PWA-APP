@@ -24,7 +24,7 @@ const profile = () => {
   }, 100);
 
   return `
-    <article class="Profile  Content-section  u-show">
+    <article class="Profile Content-section u-hide">
       <h2 class="Profile-name">${user.displayName}</h2>
       <p class="Profile-email">${user.email}</p>
       <img class="Profile-avatar" src="${user.photoURL}">
