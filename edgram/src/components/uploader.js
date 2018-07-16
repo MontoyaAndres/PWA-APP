@@ -27,7 +27,6 @@ const uploader = () => {
               showProgress();
               progressStatus(data);
             }, err => {
-              c(err, err.code, err.message);
               output.innerHTML = errorMsg(`${err.message}`, err);
             }, () => {
               storageRef.child(file.name).getDownloadURL()

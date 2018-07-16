@@ -113,12 +113,40 @@ const camera = () => {
         cameraReset();
       });
 
-      uploadPhotoBtn.addEventListener('click', e => { });
+      uploadPhotoBtn.addEventListener('click', e => {
+        e.preventDefault();
+
+        const storageRef = firebase.storage().ref().child('edgram/photos');
+        const dbRef = firebase.database().ref().child('edgram/photos');
+        const user = firebase.auth().currentUser;
+
+        let photoName = `photo_${Math.floor(Math.random() * 10000000)}`;
+        let uploadTask = storageRef.child(photoName).putString(snapshot, 'data_url');
+
+        uploadTask.on('state_changed', data => {
+          showProgress();
+          progressStatus(data);
+        }, err => {
+          output.innerHTML = errorMsg(`${err.mesagge}`, err);
+        }, () => {
+          storageRef.child(photoName).getDownloadURL()
+            .then(url => {
+              output.innerHTML = successMsg('Tu foto se ha subido');
+              savePḧotoInDB(url, user);
+              hideProgress();
+
+              // Luego de un tiempo, formatear la camara
+              setTimeout(() => output.innerHTML = '', 3000)
+              cameraReset()
+            })
+            .catch(err => output.innerHTML = errorMsg(`${err.mesagge}`, err));
+        });
+      });
     }
   }, 100);
 
   return `
-    <article class="Camera Content-section u-show">
+    <article class="Camera Content-section u-hide">
       <video muted id="camera-stream" class="Camera-video"></video>
       <img id="photo" class="Camera-photo">
       <nav class="Camera-menu">
