@@ -11,14 +11,20 @@ const profile = () => {
   const profileScripts = setInterval(() => {
     if (d.readyState === 'complete') {
       clearInterval(profileScripts);
-      dbRef.on('value', data => {
+
+      dbRef.once('value', data => {
         data.forEach(photo => {
           if (photo.val().uid === user.uid) {
             profilePhotos += `<img src="${photo.val().photoURL}">`;
           }
         });
-
         d.querySelector('.Profile-photos').innerHTML = profilePhotos;
+      });
+
+      dbRef.on('child_added', data => {
+        if (data.val().uid === user.uid) {
+          d.querySelector('.Profile-photos').innerHTML += `<img src="${data.val().photoURL}">`;
+        }
       });
     }
   }, 100);
