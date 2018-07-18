@@ -15,5 +15,5 @@ const page = `
 
 document.getElementById('root').innerHTML = page;
 
-// https://www.youtube.com/watch?v=rX4rEG3MIa8&index=54&list=PLtTGWoGMH2rN87GqdRbAwMShYShGP-46i
+// https://www.youtube.com/watch?v=cEddfJlxIXc&index=56&list=PLtTGWoGMH2rN87GqdRbAwMShYShGP-46i
 // current class -> https://github.com/jonmircha/edhtml5-pwa2017/tree/7dc0bcef2847a424444e5cc486d5473617410943

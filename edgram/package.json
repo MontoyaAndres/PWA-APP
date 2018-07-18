@@ -1,7 +1,7 @@
 {
   "name": "edgram",
   "version": "1.0.0",
-  "description": "",
+  "description": "PWA based on instagram",
   "main": "src/index.js",
   "browserslist": [
     "> 5%",

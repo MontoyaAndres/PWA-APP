@@ -1,16 +1,16 @@
-const CACHE_NAME = 'edgram-cache-v1',
-  urlsToCache = [
-    './',
-    './?utm=homescreen',
-    './index.html',
-    './index.html?utm=homescreen',
-    './style.css',
-    './script.js',
-    './favicon.ico',
-    './assets/img/edgram-logo.png',
-    './icon_192x192.png',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
-  ]
+const CACHE_NAME = 'edgram-cache-v1';
+const urlsToCache = [
+  './',
+  './?utm=homescreen',
+  './index.html',
+  './index.html?utm=homescreen',
+  './style.css',
+  './script.js',
+  './favicon.ico',
+  './assets/img/edgram-logo.png',
+  './icon_192x192.png',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+];
 
 self.addEventListener('install', e => {
   console.log('Evento: SW Instalado')
