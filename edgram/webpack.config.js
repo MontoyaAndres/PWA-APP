@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const glob = require('glob');
+const glob = require('glob-all');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');

@@ -12,6 +12,7 @@
     "prod": "webpack -p",
     "clean": "rimraf \"./public/*\"",
     "build": "npm run clean && webpack -p",
+    "preview": "npm run build && webpack-dev-server",
     "start": "webpack-dev-server --colors --config webpack.config.dev.js"
   },
   "keywords": [],
