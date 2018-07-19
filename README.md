@@ -2,6 +2,8 @@ Hi!
 
 This is a Progressive Web Aplication app based on Instagram built on pure javascript and firebase. Which has the functions to upload your photos through Real time, your friends and you can watch all the publucations!
 
+Check it out right here -> https://montoyaandres.github.io/edgram-production/
+
 You can Log in with your GitHub account!
 
 <img src="http://i64.tinypic.com/2vxq7wz.jpg" width="300">
